@@ -1,30 +1,36 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="RUBICON project page. More details and resources are coming soon.">
-  <title>RUBICON</title>
-  <style>
-    * { box-sizing: border-box; }
-    body { margin: 0; min-height: 100svh; display: grid; place-items: center; padding: 24px; background: #f7f6f2; color: #202923; font-family: system-ui, sans-serif; }
-    main { width: min(100%, 680px); padding: clamp(28px, 7vw, 64px); background: white; border: 1px solid #dce2da; border-top: 5px solid #36684a; border-radius: 12px; }
-    .label { color: #36684a; font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
-    h1 { margin: 20px 0; font-size: clamp(42px, 10vw, 72px); letter-spacing: -.05em; line-height: 1; }
-    p { color: #566159; font-size: 18px; line-height: 1.7; }
-    a { display: inline-block; margin-top: 16px; padding: 12px 20px; color: white; background: #36684a; border-radius: 6px; text-decoration: none; font-weight: 600; }
-    a:hover { background: #284f38; }
-    a:focus-visible { outline: 3px solid #b37c22; outline-offset: 4px; }
-    footer { margin-top: 36px; font-size: 14px; color: #68746b; }
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RUBICON — Reasoning beyond the point of no return</title>
+<meta name="description" content="RUBICON evaluates simulation, foresight, and causal attribution in visual puzzles with irreversible actions. Explore the code and 2,100-record dataset.">
+<meta property="og:title" content="RUBICON"><meta property="og:description" content="Do Language Models Know When They've Crossed the Point of No Return?"><meta property="og:image" content="https://rubicon-eval.github.io/assets/rubicon-banner.png"><meta property="og:type" content="website"><meta property="og:url" content="https://rubicon-eval.github.io/">
+<meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#193c2d">
+<style>
+:root{--paper:#f7f5ed;--ink:#193c2d;--muted:#56645b;--line:#d7dccf;--accent:#ad542d}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:inherit;text-underline-offset:4px}a:hover{color:var(--accent)}a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:5px}.wrap{max-width:1160px;margin:auto;padding:0 32px}.skip{position:absolute;top:-80px;left:20px;background:white;padding:12px;z-index:5}.skip:focus{top:10px}header{border-bottom:1px solid var(--line)}nav{min-height:80px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:850;letter-spacing:.13em;text-decoration:none;font-size:18px}.navlinks{display:flex;gap:26px;font-size:14px;font-weight:650}.navlinks a{text-decoration:none}.hero{padding:48px 0 56px}.art{width:100%;height:auto;display:block;border-radius:8px}.eyebrow{text-transform:uppercase;font-size:12px;font-weight:750;letter-spacing:.16em;color:var(--accent)}.intro{max-width:880px;margin:40px auto 0;text-align:center}h1{font-size:clamp(30px,4vw,49px);line-height:1.15;letter-spacing:-.045em;margin:15px 0 24px;font-weight:650}p{margin:0 0 20px}.lead{font-size:19px;color:var(--muted);max-width:730px;margin:0 auto 28px}.buttons{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}.button{display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border:1px solid var(--ink);border-radius:5px;text-decoration:none;font-weight:650;font-size:15px}.primary{background:var(--ink);color:white}.primary:hover{background:#2f5741;color:white}.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:28px 0}.stat{text-align:center;border-right:1px solid var(--line)}.stat:last-child{border:0}.stat strong{display:block;font-size:32px;line-height:1.2;letter-spacing:-.04em}.stat span{font-size:13px;color:var(--muted)}section{padding:68px 0;border-bottom:1px solid var(--line)}h2{font-size:clamp(28px,3vw,37px);line-height:1.2;letter-spacing:-.035em;margin:12px 0 18px}h3{font-size:21px;line-height:1.3;letter-spacing:-.025em;margin:14px 0 12px}.sectionintro{max-width:730px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px}.card{border:1px solid var(--line);border-radius:8px;padding:24px;background:#fcfbf6}.card p{font-size:15px;color:var(--muted);margin:0}.num{font:12px/1.5 ui-monospace,monospace;color:var(--accent);letter-spacing:.06em}.sample{padding:0;overflow:hidden}.sample img{width:100%;height:250px;object-fit:contain;background:white;padding:16px;display:block;border-bottom:1px solid var(--line)}.sample .body{padding:22px}.sample h3{margin-top:0}.note{font-size:13px;color:var(--muted);margin-top:18px}.start{display:grid;grid-template-columns:.85fr 1.15fr;gap:44px;align-items:start}pre{margin:0;background:#19382c;color:#f2f2e7;padding:24px;border-radius:8px;font-size:13px;line-height:1.9;overflow:auto;max-width:100%}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}.textlink{font-weight:650;font-size:15px}.small{font-size:14px;color:var(--muted)}footer{display:flex;justify-content:space-between;gap:20px;padding:30px 0 40px;font-size:13px;color:var(--muted)}footer p{margin:0}.footerlinks{display:flex;gap:20px}@media(max-width:760px){.wrap{padding:0 20px}nav{min-height:68px}.navlinks{gap:15px;font-size:12px}.brand{font-size:15px}.hero{padding-top:28px}.intro{margin-top:30px}.lead{font-size:17px}.grid,.start{grid-template-columns:1fr}.grid{gap:16px}.stats{grid-template-columns:repeat(2,1fr);gap:22px}.stat:nth-child(2){border:0}.stat strong{font-size:28px}section{padding:46px 0}.sample img{height:280px}.start{gap:24px}footer{flex-direction:column}pre{font-size:11px;padding:18px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
 </head>
 <body>
-  <main>
-    <div class="label">Project page</div>
-    <h1>RUBICON</h1>
-    <p>Welcome to RUBICON. More details and project resources are coming soon.</p>
-    <a href="https://github.com/rubicon-eval">Follow on GitHub</a>
-    <footer>Thank you for visiting.</footer>
-  </main>
-</body>
-</html>
+<a class="skip" href="#main">Skip to content</a>
+<header><nav class="wrap" aria-label="Main navigation"><a class="brand" href="/">RUBICON</a><div class="navlinks"><a href="#benchmark">Benchmark</a><a href="https://github.com/rubicon-eval/Rubicon">Code ↗</a><a href="https://huggingface.co/datasets/ajirs/rubicon">Dataset ↗</a></div></nav></header>
+<main id="main" class="wrap">
+<div class="hero"><img class="art" src="assets/rubicon-banner.png" width="2172" height="724" alt="RUBICON beside an impossible maze of looping stairs, with a pawn and a falling orange tile."><div class="intro"><div class="eyebrow">A benchmark for irreversible reasoning</div><h1>Do Language Models Know When They've Crossed the Point of No Return?</h1><p class="lead">One action can close every path to success. RUBICON asks whether models can simulate what happens next, foresee failure, and identify the move that made it inevitable.</p><div class="buttons"><a class="button primary" href="https://github.com/rubicon-eval/Rubicon">Explore the code <span aria-hidden="true">↗</span></a><a class="button" href="https://huggingface.co/datasets/ajirs/rubicon">Get the dataset <span aria-hidden="true">↗</span></a></div></div></div>
+<div class="stats" aria-label="Dataset at a glance"><div class="stat"><strong>3</strong><span>Puzzle domains</span></div><div class="stat"><strong>2,100</strong><span>Evaluation records</span></div><div class="stat"><strong>600</strong><span>Unique images</span></div><div class="stat"><strong>7</strong><span>Task variants per domain</span></div></div>
+<section id="benchmark"><div class="eyebrow">The questions</div><h2>Beyond finding the next move.</h2><p class="sectionintro">Reasoning about a puzzle means understanding both what an action changes and which possibilities it removes. Three task families examine that distinction.</p><div class="grid"><article class="card"><div class="num">01 / SIMULATION</div><h3>What happens next?</h3><p>Follow a specified sequence of actions and predict the resulting state.</p></article><article class="card"><div class="num">02 / FORESIGHT</div><h3>Is success still possible?</h3><p>Reason about whether the goal can still be reached from the current state.</p></article><article class="card"><div class="num">03 / CAUSAL ATTRIBUTION</div><h3>Where did it go wrong?</h3><p>Identify the first action that made successful completion impossible.</p></article></div></section>
+<section><div class="eyebrow">The environments</div><h2>Three worlds. No undo button.</h2><p class="sectionintro">Each domain introduces a different irreversible constraint. The images below are actual examples from the released dataset.</p><div class="grid"><article class="card sample"><img src="assets/mosaic_grid.png" loading="lazy" alt="Mosaic Grid benchmark board showing colored tiles and a player marker."><div class="body"><h3>Mosaic Grid</h3><p>Leaving a cell paints it. The path behind you becomes a barrier to returning.</p></div></article><article class="card sample"><img src="assets/chain_vault.png" loading="lazy" alt="Chain Vault benchmark board with keys and locked doors."><div class="body"><h3>Chain Vault</h3><p>Opening a door consumes keys. Spending them in the wrong place can block the goal.</p></div></article><article class="card sample"><img src="assets/tide_grid.png" loading="lazy" alt="Tide Grid benchmark board with tidal terrain, beacons, and an exit."><div class="body"><h3>Tide Grid</h3><p>Every action spends oxygen while the tide changes. Timing and route choices determine what remains reachable.</p></div></article></div><p class="note">Each domain has 700 records and 200 images. Related tasks reuse puzzle instances and images; records are not independent puzzle counts. The banner is a conceptual illustration.</p></section>
+<section id="start"><div class="start"><div><div class="eyebrow">Start exploring</div><h2>Inspect the data.<br>Run your own evaluation.</h2><p class="sectionintro">Browse images and prompts on Hugging Face, or download the original files using the checksum-verifying tool in the code repository.</p><p><a class="textlink" href="https://github.com/rubicon-eval/Rubicon#quick-start">Read the quick start →</a></p><p><a class="textlink" href="https://github.com/rubicon-eval/Rubicon/blob/main/docs/EVALUATION.md">Evaluation and reproducibility →</a></p></div><div><pre aria-label="Python example for loading RUBICON"><code>from datasets import load_dataset
+import json
+
+data = load_dataset(
+    "ajirs/rubicon",
+    "mosaic_grid",
+    split="test",
+)
+
+example = data[0]
+image = example["image"]
+prompt = example["prompt"]
+answer = json.loads(example["ground_truth_json"])</code></pre><p class="note">Choose <code>all</code>, <code>mosaic_grid</code>, <code>chain_vault</code>, or <code>tide_grid</code>. The release provides an evaluation split, with no training split.</p></div></div></section>
+<section><div class="eyebrow">Release notes</div><h2>Traceable from source to release.</h2><p class="sectionintro">The release preserves the original evaluation prompts, images, and answers. A file manifest records checksums for all 624 source data files, and the documentation explains scoring, dependencies, and validation limits.</p><p><a class="textlink" href="https://github.com/rubicon-eval/Rubicon/blob/main/docs/PROVENANCE.md">Read the provenance notes →</a></p><p class="small">A reuse license has not yet been assigned to the code or dataset.</p></section>
+<footer><p>RUBICON · Reasoning about irreversible actions</p><div class="footerlinks"><a href="https://github.com/rubicon-eval/Rubicon">GitHub</a><a href="https://huggingface.co/datasets/ajirs/rubicon">Hugging Face</a></div></footer>
+</main></body></html>
